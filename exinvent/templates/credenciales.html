@@ -1,0 +1,31 @@
+ <!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<link rel="stylesheet" href="/style.css">
+	
+		<title>Solicitud Acceso</title>
+	</head> 
+	<body>
+ <br><br>
+		{% if us %}
+			{{us}}
+		{% endif %}
+	<br><br>	
+ 
+	<form action="/credenciales" method="post">
+            <div class="form-group">
+            <label for="InputEmail1">Correo electrónico</label>
+            <input type="email" class="form-control" name="correo"  placeholder="Enter email">
+            </div>
+            <div class="form-group">
+            <label for="InputPassword1">Contraseña</label>
+            <input type="password" class="form-control" name="password" placeholder="Password">
+            </div>
+            <button type="submit" name="inventario" class="btn btn-primary">Ingresar</button>
+        </form>
+	</body>
+</html>

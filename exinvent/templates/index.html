@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<link rel="stylesheet" href="/style.css">
+	
+		<title>Actualizar inventario </title>
+	</head>
+	<style>
+				h1{
+					text-align: center;
+					text-transform:uppercase;
+					text-shadow: 3px 2px black;	
+					}
+				th, td {
+					border: 1px solid black;
+					padding: 10px; 
+						}
+				th{
+					padding-top: 12px;
+					padding-bottom: 12px;
+					text-align: center;
+					background-color: #4CAF50;
+				}
+				tr:hover {background-color:#f5f5f5;}			
+			</style>
+	<body>		
+	<br><br><br>
+		{% if ac %}
+			{{ac}}
+		{% endif %}
+	<br><br><br>
+		<!--<img src="/static/frutal.jpg"/> -->
+		<h1>Actualizar {{context}} </h1>
+		<br><br>
+		<p style="text-align:center; " >Los cambios se verán reflejados en el inventario</p>
+		<a href="{{url_for('credenciales')}}">Ver inventario</a><br><br> <!--{{url_for('main') }}-->
+		<div class="container">
+		
+			<table style="width:100%;">
+				
+				{% block content %}
+				<tr>
+					<th>Insumo</th>				
+					<th style="color:#47e627;">Cantidad actual</th>
+					
+					
+				</tr>
+				{% for insumo in insumos %}
+				<tr>
+					<td>{{insumo.nombre}}</td>
+					<td><form action="/actualizar_insumo" method="post">
+					<div class="form-group">
+					<input type="number" class="form-control" placeholder="#" name="{{insumo.id}} " > </td>		
+					</div>					
+					</tr>				
+				{% endfor %}
+				<button type="submit">Actualizar</button></form>
+				
+			{% endblock %}
+			<!--
+				<tr>
+					<td>Fórmula Vainilla</td>					
+					<td><form action="/act_fmvain" method="post"><input type="number" name="act_cant_fmvain"> </form></td>
+					<td><button type="submit">Actualizar</button></td>
+					
+				</tr>
+				<tr>
+					<td>Conos</td>					
+					<td><form action="/act_conos" method="post"><input type="number" name="act_cant_conos"> </form></td>
+					<td><button type="submit">Actualizar</button></td>
+					
+				</tr>
+				<tr>
+					<td>Cobertura Chocolate</td>					
+					<td><form action="/act_cobchoc" method="post"><input type="number" name="act_cant_cobchoc"> </form></td>
+					<td><button type="submit">Actualizar</button></td>
+					
+				</tr>
+				<tr>
+					<td>Cobertura Ferrero</td>					
+					<td><form action="/act_cobferr" method="post"><input type="number" name="act_cant_cobferr"> </form></td>
+					<td><button type="submit">Actualizar</button></td>
+					
+				</tr>
+				<tr>
+					<td>Cobertura Cookies</td>					
+					<td><form action="/act_cobcook" method="post"><input type="number" name="act_cant_cobcook"> </form></td>
+					<td><button type="submit">Actualizar</button></td>
+					
+				</tr>  -->
+			</table>		
+		<br><br>
+		</div>
+		<div class="container">
+		<form action="/ir_a_pedir" method="get">
+			<button type="button" name="actualizar"style="color:green; align: center;">Registrar pedido</button>
+			</form>
+		<br><br>
+		</div>
+		
+	
+	</body>
+
+
+</html>
