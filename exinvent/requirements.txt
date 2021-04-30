@@ -23,6 +23,6 @@ requests==2.22.0
 requests-toolbelt==0.9.1
 rsa==4.0
 six==1.13.0
-urllib3==1.25.7
+urllib3==1.25.8
 virtualenv==16.7.7
 Werkzeug==0.16.0
